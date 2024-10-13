@@ -6,14 +6,13 @@ def prompt(message):
     print(f'==> {message}')
 
 def invalid_number(number_str):
-    '''check for valid number'''
+    '''Check for a validity of entered number'''
     try:
-        float(number_str) # checks if input can be converted to float
-        if float(number_str) < 0:
-            return True # checks if input is less than 0
+        number = float(number_str)  # Attempt to convert to float
+        return number < 0  # Return True if the number is negative, else False
     except ValueError:
-        return True
-    return False
+        return True  # Return True if conversion fails (not a valid number)
+
 
 def valid_loop(repeat):
     '''Prompts until valid input ('y' or 'n') is provided. 
@@ -21,7 +20,6 @@ def valid_loop(repeat):
     while repeat not in ['y', 'n']:
         repeat = input("Please enter 'y' for yes or 'n' for no: ").lower()
     return repeat == 'n'
-
 
 prompt('Welcome to your mortgage calculator!')
 while True:
@@ -55,7 +53,7 @@ while True:
     if monthly_rate == 0:
         monthly_payment = float(loan_amount)/float(loan_duration_months)
     else:
-        monthly_payment = float(loan_amount) * (monthly_rate / (1 - (1 + monthly_rate) ** (-(float(loan_duration_months)))))
+        monthly_payment = float(loan_amount) * (monthly_rate / (1 - (1 + monthly_rate)**(-(float(loan_duration_months)))))
     os.system('clear')
     prompt(f'Your monthly payment equals to {round(monthly_payment, 2)} for a loan of ${loan_amount} at {apr_value}% APR for {loan_duration} years (or {loan_duration_months} months)')
     prompt('Would you like to do another calculation? Enter "y" for yes, "n" for no')
