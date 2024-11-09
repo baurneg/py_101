@@ -1,5 +1,10 @@
-r = "crimson"
-g = "emerald"
-b = "azure"
+def alpha_inserts(countries, country):
+    countries.append(country)
 
-print(f'{r = }, {g = }, {b = }') # r = 'crimson', g = 'emerald', b = 'azure'
+
+countries = ['Australia', 'Cuba', 'Senegal']
+
+alpha_inserts(countries, 'Brazil')
+
+print(', '.join(countries))  # Outputs "Australia, Brazil, Cuba, Senegal"
+alpha_inserts(['Brazil'], 'Australia')

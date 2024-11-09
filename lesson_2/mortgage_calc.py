@@ -21,7 +21,7 @@ def valid_loop(repeat):
         repeat = input("Please enter 'y' for yes or 'n' for no: ").lower()
     return repeat == 'n'
 
-prompt('Welcome to your mortgage calculator!')
+print('Welcome to your mortgage calculator!')
 while True:
     prompt('Please enter your loan amount: ')
     loan_amount = input()
