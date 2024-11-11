@@ -3,7 +3,13 @@
 # the original string with all consecutive duplicate 
 # characters collapsed into a single character.
 
-my_string = 'ddaaiillyy'
-index = 0
-if my_string[index] == my_string[index + 1]
-    
+
+# def crunch(my_string):
+
+
+# print(crunch('ddaaiillyy ddoouubbllee'))
+
+my_string = 'ddaaiillyy ddoouubbllee'
+prev_char = ''
+
+for letter in range(len(my_string)):
