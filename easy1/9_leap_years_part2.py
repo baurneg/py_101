@@ -11,9 +11,9 @@
 def is_leap_year(year):
     if year >= 1752:
         return ((year % 4 == 0 and year % 100 != 0) or year % 400 == 0)
-    elif: 
-        year < 1752: and year % 4 == 0
-
+    else:
+        return year % 4 == 0
+    
 print(is_leap_year(1))
 print(is_leap_year(2))
 print(is_leap_year(3))

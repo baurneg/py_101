@@ -14,38 +14,37 @@
 # The product of the integers between 1 and 6 is 720.
 
 '''Sum of consecutive numbers'''
-
-def sum_numbers(number):
-    sum = 0
-    for number in range(1, int(n) + 1):
-        sum += number
-    return sum
-
-def product_numbers(number):
-    product = 1
-    for number in range(1, int(number) + 1):
-        product *= number
-    return product
+OPTIONS = ['s', 'p']
 def invalid_number(number):
     try:
         number = int(number)
-        return number < 0
+        if number <= 0: 
+          return True
     except ValueError:
         return True
+def sum(number):
+    sum_numbers = 0
+    for item in range(1, number + 1):
+        sum_numbers += item
+    return (sum_numbers)
+def product(number):
+    product_number = 1
+    for item in range(1, number + 1):
+        product_number *= item
+    return (product_number)
 
-OPTIONS = ['s', 'p']
-print('Please enter an integer greater than 0: ')
-number = input()
-while invalid_number(number):
-    print("Input is not a valid number. Please enter a positive number: ")
-    number = input()
+number_value = input('Please enter an integer greater than 0: ')
+while invalid_number(number_value):
+    print('Please enter a valid number: ')
+    number_value = input()
 print('Enter "s" to compute the sum, or "p" to compute the product: ')
 operation = input()
-if operation not in OPTIONS:
+product_value = product(int(number_value))
+sum_value = sum(int(number_value))
+while operation not in OPTIONS:
     print('Please enter either "s" or "p":')
     operation = input()
+if operation == 'p':
+    print(f'The product of the integers between 1 and {number_value} is {product_value}.')
 else:
-    if operation == 'p':
-        print(f'The product of the integers between 1 and {number} is {product_numbers(number)}.')
-    else:
-        print(f'The sum of the integers between 1 and {number} is {sum_numbers(number)}.')
+    print(f'The sum of the integers between 1 and {number_value} is {sum_value}.')
