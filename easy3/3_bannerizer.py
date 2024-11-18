@@ -26,3 +26,6 @@ def print_in_box(my_string):
     print(f'+{(len(my_string) + 2 )*'-'}+')
 print_in_box('To boldly go where no one has gone before.')
 print_in_box('')
+
+def print_in_box(my_string):
+    horizontal

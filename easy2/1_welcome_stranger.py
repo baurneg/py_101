@@ -13,10 +13,17 @@
 
 
 def greetings(my_list, my_dict):
-    for item in my_list:
-        full_name = " ".join(item)
-        print(full_name)
-greeting = greetings(
-    ["John", "Q", "Doe"],
-    {"title": "Master", "occupation": "Plumber"},
+    name = ''
+    occupation = ''
+    for word in my_list:
+        name += word
+        print(name)
+    for key in my_dict:
+        occupation += key
+
+greeting = ( 
+        ["John", "Q", "Doe"],
+        {"title": "Master", "occupation": "Plumber"},
 )
+print(greetings(["John", "Q", "Doe"],
+        {"title": "Master", "occupation": "Plumber"}))
