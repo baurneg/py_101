@@ -10,6 +10,14 @@
 # print(crunch('ddaaiillyy ddoouubbllee'))
 
 my_string = 'ddaaiillyy ddoouubbllee'
-prev_char = ''
+my_list = list(my_string)
+index = 0
+prev_char = my_list[index]
+letter = my_list[index + 1]
+new_list = []
 
-for letter in range(len(my_string)):
+while index < len(my_list):
+    if letter == prev_char:
+        my_list.pop(letter)
+    index += 1
+    print(new_list)
