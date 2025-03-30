@@ -23,4 +23,4 @@ my_string = "---what's my +*& line?"
 for char in my_string:
     if 65 > ord(char) > 122:
         new_string = my_string.replace(char, ' ', count = 1)
-    print(new_string)
+        print(new_string)

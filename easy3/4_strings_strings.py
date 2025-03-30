@@ -8,5 +8,6 @@
 # print(stringy(4) == "1010")             # True
 # print(stringy(7) == "1010101")          # True
 
-for number in range(6):
-    print('1')
+my_list = ["1", "0"]
+
+while 

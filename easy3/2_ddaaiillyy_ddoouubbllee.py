@@ -12,12 +12,13 @@
 my_string = 'ddaaiillyy ddoouubbllee'
 my_list = list(my_string)
 index = 0
-prev_char = my_list[index]
-letter = my_list[index + 1]
 new_list = []
-
-while index < len(my_list):
+new_string = ''
+while index < len(my_list) - 1:
+    prev_char = my_list[index]
+    letter = my_list[index + 1]
     if letter == prev_char:
-        my_list.pop(letter)
+        new_list.append(letter)
     index += 1
-    print(new_list)
+    new_string = ''.join(new_list)
+print(new_string)

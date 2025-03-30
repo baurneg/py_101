@@ -17,3 +17,11 @@ def negative(number):
 print(negative(5) == -5)      # True
 print(negative(-3) == -3)     # True
 print(negative(0) == 0)       # True
+
+# def negative(number):
+#     return -abs(number)
+# Discussion
+# Python has a built-in abs function which returns the absolute value 
+# of the specified number. By prefixing the result of abs(number) 
+# with a negative sign -, the function effectively always returns 
+# the negative representation of the given number.
