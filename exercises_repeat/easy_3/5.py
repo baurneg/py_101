@@ -12,20 +12,10 @@
 #   ***
 #  ****
 # *****
-# Example 2Copy Code
-# triangle(9)
-# Output for Example 2Copy Code
-#         *
-#        **
-#       ***
-#      ****
-#     *****
-#    ******
-#   *******
-#  ********
-# *********
 
-for symbol in range(1, 5):
-    for x in range(1, 5):
-        print(x * '*')
-    print('x' * symbol)
+count = 5
+index = count - 1
+
+while index > 0:
+    print(' ' * index + '*')
+    index -= 1 
