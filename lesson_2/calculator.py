@@ -10,6 +10,8 @@ def invalid_number(number_str):
         int(number_str)
     except ValueError:
         return True
+    except ZeroDivisionError:
+        return True
 
     return False
 
@@ -18,12 +20,9 @@ prompt('Welcome to Calculator!')
 prompt("What's the first number?")
 number1 = input()
 
-while invalid_number(number1):
-    prompt("Hmm... that doesn't look like a valid number.")
-    number1 = input()
-
-prompt("What's the second number?")
-number2 = input()
+while invalid_number(number1):   
+    number1 = prompt(input("Hmm... that doesn't look like a valid number."))
+    number2 = input(prompt("What's the second number?"))
 
 while invalid_number(number2):
     prompt("Hmm... that doesn't look like a valid number.")
@@ -45,6 +44,8 @@ match operation:
     case "3":
         output = int(number1) * int(number2)
     case "4":
-        output = int(number1) / int(number2)
-
+        if number2 != 0:
+            output = int(number1) / int(number2)
+        else:
+            print('not a valid number')
 prompt(f"The result is {output}")
