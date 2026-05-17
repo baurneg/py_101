@@ -2,6 +2,7 @@
 
 import random
 
+
 VALID_CHOICES = ["rock", "paper", "scissors", "spock", "lizard"]
 ABBREVIATED_VALID_CHOICES = ["r", "p", "s", "sp", "l"]
 
@@ -20,20 +21,24 @@ def determine_winner(user_selection, computer_selection):
         return "It's a tie!"
 
     rules = {
-            "rock": ["scissors", "lizard"],
-            "paper": ["rock", "spock"],
-            "scissors": ["paper", "lizard"],
-            "spock": ["rock", "scissors"],
-            "lizard": ["paper", "spock"],
-    }
+            "rock": "scissors", 
+            "paper": "rock",
+            "scissors": "paper",
+            "spock": "rock",
+            "paper": "spock",
+            "lizard": "paper",
+            "scissors": "lizard",
+            "spock": "scissors",
+            "lizard": "spock",
+            "rock": "lizard",
+            }
 
-    if computer_selection in rules[user_selection]:
+    if rules[user_selection] == computer_selection:
         return "User wins!"
-    else:
-        return "Computer wins!"
+
+    return "Computer wins!"
 
 def valid_choice_selection(prompt):
-    '''Checks the first letter'''
     match prompt:
         case "s":
             return "scissors"
@@ -45,18 +50,27 @@ def valid_choice_selection(prompt):
             return "lizard"
         case "sp":
             return "spock"
+computer_win_count = 0
+user_win_count = 0
+def count_wins(result):
 
-def count_wins(user, computer):
-    user_count = 0
-    computer_count = 0
+    while computer_win_count <= 5 or user_win_count <= 5:
+        if result == "Computer wins!":
+            computer_win_count += 1
+        elif result == "User wins!":
+            user_win_count += 1
+    return (result)
     
 
+
+    
+    
 user_choice = get_valid_choice("Choose one, enter: \n'r' for rock \n'p' for paper \n's' for scissors \n'sp' for spock \n'l' for lizard: \n")
-print(f"You played '{user_choice.upper()}'!")
+print(f"You played: '{user_choice.upper()}'!")
 
 computer_choice = random.choice(VALID_CHOICES)
-print(f"Computer played '{computer_choice.upper()}'!")
+print(f"Computer played: '{computer_choice.upper()}'!")
 
 RESULT = determine_winner(user_choice, computer_choice)
 
-print(RESULT)
+

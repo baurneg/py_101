@@ -25,7 +25,7 @@ while invalid_number(number1):
     number2 = input(prompt("What's the second number?"))
 
 while invalid_number(number2):
-    prompt("Hmm... that doesn't look like a valid number.")
+    prompt("Hmm... that doesn't look like a valid number.\n")
     number2 = input()
 
 prompt('''What operation would you like to perform?

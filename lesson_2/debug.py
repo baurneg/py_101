@@ -1,9 +1,13 @@
-import pdb
+def titlize(sentence):
+    words = sentence.split()
+    new_words = []
 
-counter = 1
-pdb.set_trace()
+    for word in words:
+        if len(word) > 2:
+            word.capitalize()
+        new_words.append(word)
 
-while counter <= 5:
-    print(counter)
-    pdb.set_trace()  # Add breakpoint
-    counter += 1
+    return ' '.join(new_words)
+
+title = 'hello world of programming'
+print(titlize(title))
